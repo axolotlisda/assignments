@@ -1,0 +1,20 @@
+What is a stack trace?
+#When your Ruby program crashes after encountering a runtime error or exception, it will produce a wall of text known as a stack trace that is then output in your terminal.
+
+What is generally the most useful line in a stack trace?
+#The very first line of the stack trace will generally provide the most useful information about the error your program encountered:
+
+What are the two things you can learn from the first line of a stack trace?
+#First, this line of the stack trace will tell you what specific line caused the runtime error. This line also provides a brief explanation of the error and the name of the error.
+
+How do puts and Pry help you in the debugging process?
+#The debugging process is all about confirming assumptions about your code until you find something that goes against your assumptions. For example, does a variable or method return what you expect? Does a calculation or iteration over an array or hash give the output you expect?
+
+What should you use instead of puts for nil values?
+#p is a combination of puts and #inspect, the latter of which essentially prints a string representation of whatever it’s called on.
+
+Where should you start with debugging if you encounter a runtime error?
+#stack trace
+
+Where should you start with debugging if your program runs but does not work the way you expect?
+#Obviously, if available, the stack trace is the first place you should look when debugging. If there’s no stack trace, then puts and Pry are the easiest and quickest tools you can use to get yourself back up and running.

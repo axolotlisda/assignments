@@ -1,0 +1,31 @@
+What is a Boolean?
+#determine whether an expression evaluates to true or false
+
+What are “truthy” values?
+# values that are not false
+
+Are the following considered true or false: nil, 0, "0", "", 1, [], {} and -1?
+#false
+
+When do you use elsif?
+#We often want to check a condition and run some code if it’s true but then run some other code if it’s false.
+
+When do you use unless?
+#You should use an unless statement when you want to not do something if a condition is true, because it can make your code more readable than using if !true.
+
+What do || and && and ! do?
+#Using the && operator, both expressions must return true. If the first expression encountered returns false, then the second expression is never checked. To the Ruby interpreter, it’s pointless to evaluate the second half as the overall expression can never return true.
+#With the || operator, if the first expression evaluates to true, then the second expression is never checked because the complete expression is already true, and the code in the block is run.
+#The ! operator reverses the logic of the expression. Therefore, if the expression itself returns false, using the ! operator makes the expression true, and the code inside the block will be executed.
+
+What is short circuit evaluation?
+#It means in a conditional statement with two conditions the second condition is evaluated only when the first condition is not enough to determine the value of expression
+
+What is returned by puts("woah") || true?
+#"woah"
+
+What is the ternary operator?
+#The ternary operator is a one-line if...else statement that can make your code much more concise.
+
+When should you use a case statement?
+#Case statements are a neat way of writing several conditional expressions that would normally result in a messy if...elsif statement. You can even assign the return value from a case statement to a variable for use later.

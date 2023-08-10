@@ -1,0 +1,25 @@
+What is a class?
+#Ruby defines the attributes and behaviors of its objects in classes. You can think of classes as basic outlines of what an object should be made of and what it should be able to do.
+
+What are getters and setters?
+#these methods allow us to access a class’s instance variable from outside the class. Getter methods are used to get the value of an instance variable while the setter methods are used to set the value of an instance variable of some class.
+
+What is inheritance?
+#Inheritance is the ability of one class to be a child of another class and therefore inherit all its characteristics, including methods and variables.
+
+What is a scope?
+#Scope is the formal term that represents when you can access a variable or method and when you can't. It's nothing explicit in the code (you're never calling a method named scope or anything like that); it's just a concept. If your variable is "in scope" then it's available for use, otherwise it's "out of scope".
+
+When is a new scope defined?
+#A new scope is created when you first define a variable. That variable is then accessible by anything "downstream" of it in the code, until the current scope is exited (by leaving a method or loop)
+
+What is the purpose of instance variables?
+#It is a variable that exists as long as the object instance exists and it is one of the ways we tie data to objects. It does not "die" after the initialize method is run. It "lives on", to be referenced, until the object instance is destroyed.
+
+What is the difference between class variables and instance variables?
+#This differentiation allows us to use class variables to initialize objects with a specific value assigned to variables, and use different variables for each object with instance variables.
+Making use of class- and instance-specific variables can ensure that our code adheres to the DRY principle to reduce repetition within code.
+
+##class variables and class methods. Class variables, denoted with TWO @@'s, are owned by the class itself so there is only one of them overall instead of one per instance.
+
+##It is a variable that exists as long as the object instance exists and it is one of the ways we tie data to objects. It does not "die" after the initialize method is run. It "lives on", to be referenced, until the object instance is destroyed.

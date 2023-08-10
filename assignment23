@@ -1,0 +1,17 @@
+What are functions useful for?
+-A function is almost like a mini-program that we can write separately from the main program, without having to think about the rest of the program while we write it. This allows us to reduce a complicated program into smaller, more manageable chunks, which reduces the overall complexity of our program.
+
+How do you invoke a function?
+-by calling it by name and open parenthesis close parenthesis like this iamfunction();
+
+What are anonymous functions?
+-anonymous functions are unnamed functions.
+
+What is function scope?
+- function scope is the content inside of the two curly braces {} or the function body.
+
+What are return values?
+-they are the values that a function returns when it completes
+
+What are arrow functions?
+-they are a simpler and concise syntax for creating functions.

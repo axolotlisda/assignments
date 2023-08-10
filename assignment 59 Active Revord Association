@@ -1,0 +1,14 @@
+What two pieces of information will Rails assume by default for associations?
+- When you create an association, Rails makes two major assumptions – first, that the class of the model your association points to is based directly off of the name of the association, and, second, that the foreign key in any belongs_to relationship will be called yourassociationname_id.
+
+Which type of association may require the :source option to be specified?
+- The has-many-through associations. Rails uses the name of the association in the through table to determine which foreign key and table name to reach out to. If it’s named anything irregular, you’ll use the :source option to specify which association actually points where we’d like to go. You can think of :source as being just like :class_name but for the associations in the “through table”.
+
+What is populated automatically when an object is created by an association?
+- call #new or #create on the association to automatically populate the foreign key.
+
+Can a polymorphic association use a single column foreign key?
+- We solve this by storing not just the foreign key id, but also a reference to which type of model it corresponds to. That way, whenever you want to retrieve a comment, by specifying which type of thing it belongs to it is no longer ambiguous what you’re asking for. Note that Rails does this for you in the background as long as it knows you’re working with a polymorphic association.
+
+Can a model have associations with instances of the same model?
+- Often times you have relationships between the same type of model, for instance users who can follow other users. In this case, you need to specify both associations in your User model but name them differently. You will need to specify in your has_many association what the name of the foreign_key

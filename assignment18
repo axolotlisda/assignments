@@ -1,0 +1,12 @@
+How do you make flex items arrange themselves vertically instead of horizontally?
+-using the flex-direction: column; .
+
+In a column flex-container, what does flex-basis refer to?
+-the height instead of width.
+
+In a row flex-container, what does flex-basis refer to?
+-the width
+
+Why do the previous two questions have different answers?
+-because they are different questions which requires different answer.
+-because column flex-container has vertical direction that is why the flex-basis's value will be put to the height and vice versa to the row ones.

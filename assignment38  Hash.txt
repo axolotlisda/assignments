@@ -1,0 +1,48 @@
+What are the differences between hashes and arrays?
+#Hash is a collection of unique keys and their values. Hash is like an Array, except the indexing is done with the help of arbitrary keys of any object type. In Hash, the order of returning keys and their value by various iterators is arbitrary and will generally not be in the insertion order.
+#An array is a data structure that represents a list of values, called elements. Arrays let you store multiple values in a single variable.
+
+What are keys and values in a hash?
+#keys are the like container it can be a symbol, string , an array etc that is used to store values in the hash.
+#values are anything like a symbol, string, number, array and even another hash.
+
+How can you create a new hash?
+#my_hash = {
+  "a random word" => "ahoy",
+  "Dorothy's math test score" => 94,
+  "an array" => [1, 2, 3],
+  "an empty hash within a hash" => {}
+}
+
+How can you populate a hash with data?
+#You can add a key-value pair to a hash by calling the key and setting the value, just like you would with any other variable.
+
+shoes["fall"] = "sneakers"
+shoes     #=> {"summer"=>"sandals", "winter"=>"boots", "fall"=>"sneakers"}
+
+How can you change existing values within a hash?
+#You can also use this approach to change the value of an existing key.
+
+shoes["summer"] = "flip-flops"
+shoes     #=> {"summer"=>"flip-flops", "winter"=>"boots", "fall"=>"sneakers"}
+
+How can you delete existing data from a hash?
+#Deleting data from a hash is simple with the hash’s #delete method, which provides the cool functionality of returning the value of the key-value pair that was deleted from the hash.
+
+shoes.delete("summer")    #=> "flip-flops"
+shoes                     #=> {"winter"=>"boots", "fall"=>"sneakers"}
+
+How can you merge two hashes together?
+#Occasionally, you’ll come across a situation where two hashes wish to come together in holy union. Luckily, there’s a method for that. (No ordained minister required!)
+
+hash1 = { "a" => 100, "b" => 200 }
+hash2 = { "b" => 254, "c" => 300 }
+hash1.merge(hash2)      #=> { "a" => 100, "b" => 254, "c" => 300 }
+
+Why is it preferred to use symbols as hash keys?
+#This is predominantly because symbols are far more performant than strings in Ruby, but they also allow for a much cleaner syntax when defining hashes.
+japanese_cars = {
+  honda: "Accord",
+  toyota: "Corolla",
+  nissan: "Altima"
+}

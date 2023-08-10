@@ -1,0 +1,10 @@
+How would you briefly define a recursive function?
+# recursion is the idea that a function calls itself.
+
+What is the point of recursion? Is it more efficient than using a plain loop?
+# Recursion is considered both a fundamental precept of computer science and a litmus test that separates the decent programmers from the terrible ones.
+
+What are the 2 essential parts in a recursive function?
+# base case and recursive case
+Why is “stack overflow” relevant to a recursive problem?
+# In recursive implementations of D&C algorithms, one must make sure that there is sufficient memory allocated for the recursion stack, otherwise, the execution may fail because of stack overflow.

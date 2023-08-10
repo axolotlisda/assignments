@@ -1,0 +1,51 @@
+How would you go through the lines of a file using the IO object in the command line?
+#[1] pry(main)> fd = IO.sysopen '/Users/joelquenneville/Desktop/test.txt', 'w+'
+=> 8
+[2] pry(main)> io = IO.new(fd)
+=> #<IO:fd 8>
+[3] pry(main)> io.puts 'hello world'
+=> nil
+[4] pry(main)> io.puts 'goodbye world'
+=> nil
+This stream has the lines “hello world” and “goodbye world”. If we were to attempt to read:
+
+[5] pry(main)> io.gets
+=> nil
+[6] pry(main)> io.eof?
+=> true
+Our cursor is currently at the end of the file. In order to read we would need to first rewind.
+
+[7] pry(main)> io.rewind
+=> 0
+[8] pry(main)> io.gets
+=> "hello world\n"
+
+How would you take the Array [1,2,3] and serialize it into a JSON string format?
+#class Person
+  def to_json
+    JSON.dump ({
+      :one => @one,
+      :two => @two,
+      :three => @three
+    })
+  end
+  
+What are the benefits of YAML vs JSON vs MessagePack serialization formats?
+#YAML - readability
+JSON - readability + fast
+MessagePack - fast
+
+How would you check if a file exists using the File object in the command line?
+# if File.exists?(filename)
+   puts "#{filename} exists"
+end
+
+In a Download directory containing 5 files, how would you count the number of files in that directory using the Dir object?
+# count the files in my Downloads directory:
+puts Dir.glob('Downloads/*').length   #=> 382
+
+# count all files in my Downloads directory and in sub-directories
+puts Dir.glob('Downloads/**/*').length   #=> 308858
+
+# list just PDF files, either with .pdf or .PDF extensions:
+puts Dir.glob('Downloads/*.{pdf,PDF}').join(",\n")

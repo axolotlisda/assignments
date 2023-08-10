@@ -1,0 +1,22 @@
+What are the main differences between external, internal, and inline CSS?
+-external can be used by creating a separate file that end on a .css file extension and linking it in the html file using a link element. 
+-internal can be used inside of the html file directly by inserting the code <style></style> on the after the <head> tag.
+-inline can be written directly inside the <body> of the html.
+
+
+What is the syntax for class and ID selectors?
+-class : A period immediately followed by the case-sensitive value of the class attribute. Classes aren’t required to be unique, so you can use the same class on as many elements as you want.
+-ID : A hashtag immediately followed by the case-sensitive value of the ID attribute.
+
+How would you apply a single rule to two different selectors?
+-Using a group selector
+
+Given an element that has an id of title and a class of primary, how would you use both attributes for a single rule?
+-By Using Chaining selector.
+
+What does the descendant combinator do?
+-It uses a parent-child relationship. it combine multiple selectors differently than either grouping or chaining them, as they show a relationship between the selectors.
+
+Between a rule that uses one class selector and a rule that uses three type selectors, which rule has the higher specificity?
+-ID Selector will always beat Class Selector and Class Selector will always beat Type Selector so Class selector  will have higher specificity.
+

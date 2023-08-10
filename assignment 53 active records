@@ -1,0 +1,16 @@
+Should Active Record model classes be singular or plural?
+- for a class Book, you should have a database table called books. The Rails pluralization mechanisms are very powerful, being capable of pluralizing (and singularizing) both regular and irregular words.
+example: Model Class - Singular with the first letter of each word capitalized (e.g., BookClub).
+Database Table - Plural with underscores separating words (e.g., book_clubs).
+
+Which rails command will undo a database migration?
+- You can just type $ rails db:rollback and the last series of migrations that you ran will be reversed and you’re back to where you were.
+
+What does the validation helper presence: true enforce?
+- This helper validates that the specified attributes are not empty.
+
+How can you see why an instance of a model class has failed validation?
+- To verify whether or not a particular attribute of an object is valid, you can use errors[:attribute]. It returns an array of all the error messages for :attribute. If there are no errors on the specified attribute, an empty array is returned.
+
+If class A has a belongs_to association with class B, which class’s database table should contain a foreign key?
+- The distinction is in where you place the foreign key (it goes on the table for the class declaring the belongs_to association)

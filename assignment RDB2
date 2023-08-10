@@ -1,0 +1,25 @@
+What is the difference between a foreign key and a primary key?
+# A primary key is used to ensure that data in the specific column is unique.
+# A foreign key is a column or group of columns in a relational database table that provides a link between data in two tables. It is a column (or columns) that references a column (most often the primary key) of another table. 
+
+Where is the setup information for your database stored?
+# The setup information for your database is stored in a special file called the “Schema”, and this is updated whenever you make changes to the structure of your database.
+
+What are the important parts of a SQL command?
+# Every CRUDdy command in SQL 
+
+Which SQL statement is associated with “Read” from the CRUD acronym?
+# “Read” queries, which use SELECT, are the most common, e.g. SELECT * FROM users WHERE created_at < '2013-12-11 15:35:59 -0800'. The * you see just says “all the columns”.
+
+Which JOIN statement keeps only the rows from both tables where they match up?
+# INNER JOIN, aka JOIN – Your best friend and 95% of what you’ll use. Keeps only the rows from both tables where they match up. If you asked for all the posts for all users
+
+How do you use an aggregate function?
+# You include the function as a part of the SELECT statement, like SELECT MAX(users.age) FROM users. The function will operate on just a single column unless you specify *, which only works for some functions like COUNT (because how would you MAX a column for “name”?).
+
+In which situation would you use the HAVING function?
+# WHERE won’t work anymore. So to conditionally retrieve records based on aggregate functions, you use the HAVING function, which is essentially the WHERE for aggregates.
+
+Why can’t I just use Ruby to process my database data?
+# SQL is faster than Ruby!
+Learning this stuff is particularly relevant because it’s MUCH faster for you to build queries that use SQL intelligently than to just grab a whole bunch of data out of your database and then use Ruby to process it.

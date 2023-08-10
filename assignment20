@@ -1,0 +1,44 @@
+Name the three ways to declare a variable
+- var, const and let.
+
+Which of the three variable declarations should you avoid and why?
+- sometimes the behavior of var is not what you expect.
+
+What rules should you follow when naming variables?
+- The name must contain only letters, digits, or the symbols $ and _.
+  The first character must not be a digit.
+
+What should you look out for when using the + operator with numbers and strings?
+-Usually, the plus operator + sums numbers. But, if the binary + is applied to strings, it merges (concatenates) them.
+
+How does the % operator work?
+-The result of a % b is the remainder of the integer division of a by b.
+
+Explain the difference between == and ===.
+- The == operator does the type conversion of the operands before comparison, whereas the === operator compares the values as well as the data types of the operands
+
+When would you receive a NaN result?
+- Trying to do arithmetic with a non-numeric string will result in NaN.
+
+How do you increment and decrement a number?
+- by using the ++ to increment a variable and -- to decrement it. Increment/decrement can only be applied to variables. Trying to use it on a value like 5++ will give an error.
+
+Explain the difference between prefixing and post-fixing increment/decrement operators.
+- When the operator goes after the variable, it is in “postfix form”: counter++.
+The “prefix form” is when the operator goes before the variable: ++counter.
+
+What is operator precedence and how is it handled in JS?
+-If an expression has more than one operator, the execution order is defined by their precedence, or, in other words, the default priority order of operators.
+(Parenthesis, Exponent, Multiplication, Division, Addition, Subtraction).
+
+How do you access developer tools and the console?
+-open up the browser’s console by right-clicking on the blank webpage and selecting “Inspect” or “Inspect Element”. In the ‘Developer Tools’ pane find and select the ‘Console’ tab, where you should see the output of our console.log statement.
+
+How do you log information to the console?
+-console.log() is the command to print something to the developer console in your browser.
+
+What does unary plus operator do to string representations of integers?
+-The plus + exists in two forms: the binary form that we used above and the unary form.
+The unary plus or, in other words, the plus operator + applied to a single value, doesn’t do anything to numbers. But if the operand is not a number, the unary plus converts it into a number.
+
+

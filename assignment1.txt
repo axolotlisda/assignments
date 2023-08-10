@@ -1,0 +1,98 @@
+Name at least one thing your question should always include.
+explain what you actually see and name what you want to see.
+
+
+Describe the “XY Problem”.
+when user wants to solve problem x but instead asks for problem y because the user thinks answering problem y will solve problem x
+
+
+Describe three attributes of a “help vampire”.
+does not use intellegible questions or asking impossible questions
+asking questions that other people already asked per every minute
+does not use google for the most common and easy questions
+
+
+
+
+Is Windows an operating system or an application?
+operating system
+
+
+What’s the difference between open source and closed source software?
+Open source are usually free but cost money from support it can also be use debug faster by almost anyone
+Closed source usually cost money but they are more stable and user friendly. If there are bugs and glitches you have to wait for the creators to update it.
+
+
+What are some use cases of a screenshot?
+You can use screen screenshot to capture anything from screen. examples are picture, websites or game that you want to save as a picture.
+
+Give an example of a weak and a strong password.
+weak passwords examples are your pet's name, birthday or basic passwords.
+strong passwords examples words that can't be found on a dictionary like the phrase " jack and jill went up the hill" and make it simple as "jajwuth".
+you can also make it stronger by adding capital letters, numbers, and symbols. example is J&jwUth
+
+
+
+
+
+
+
+
+
+
+
+
+
+What is a network?
+-a group of devices that are connected to each other and can share information and resources with each other
+
+
+What is the internet?
+internet is a wire that is used to connect computers around the world
+
+What is an IP address?
+-it is a unique address that identifies each computer. it is made of 4 numbers separated by dots.
+
+
+What is a router?
+it is a tiny computer that acts as a railway station. It makes sure that a message sent from a given computer arrives at the right destination.
+
+
+What is an ISP?
+They are the Internet service provider. ISP is a company that manages special routers that are all linked together and can also access other ISP's routers
+
+
+What are packets and how are they used to transfer data?
+packets are small chunks of data that are sent by server to client. It is sent in thousand small chunks. sometimes the data is dropped or corrupted, that is why it is easier to replace small chunks when it happens.
+
+What is a client?
+- clients are typical internet connected devices and web accessing software
+
+What is a server?
+- servers are computers that store webpages, sites or apps. when client device wants to access webpage, a copy of the webpage is downloaded from the server onto the client machine to be displayed in the user's web browser
+
+
+What is a web page?
+- a document which can be displayed in a web browser.
+
+What is a web server?
+- a web server is a collection of web pages which are grouped together and usually connected together in various ways often called a web site or a site
+
+What is a web browser?
+a web browser is a software application used to access information on the world wide web. 
+
+
+What is a search engine?
+it is a web service or a kind of a website that helps you find other web pages such as google, bing or duckduckg. search engines are normally accessed through a web browser 
+
+What is a DNS request?
+most important and overlooked parts of the internet. without dns the internet will collapse. DNS is used to translate actual name into an ip address that will help you connect to the webpage.
+
+Which browser are you currently using?
+- microsoft edge.
+
+In your own words, explain what happens when you run a search on google.com.
+when you search in google.com. your browser will ask the OS where is example.com is then your OS is configured manually or automatically to ask a resolving name server for ip address it does not know. After that if you don't already have cache it will ask  the root name server and it will pass to the tld name servers and lastly the authoriatative name server. the autoritariatative then will redirect you to the ip address that you are looking for ex.(192.168.1.1) if one of those server is filtered the searching won't work.
+
+
+resolving name server, root name server, tld name servers, authoritative name servers.

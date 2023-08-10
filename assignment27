@@ -1,0 +1,29 @@
+What is an array?
+-An array is a special variable, which can hold more than one value
+
+What are arrays useful for?
+-If you have a list of items (a list of car names, for example), storing the cars in single variables.
+
+How do you access an array element?
+-by referring to an index number.
+
+How do you change an array element?
+-variable name with index then the value ex. cars[0] = "Opel";
+
+What are some useful array properties?
+-length, sort.
+
+What are some useful array methods?
+-join(), toString(), pop(), push(), shift(),unshift(), etc.
+
+What are loops useful for?
+-Loops are all about doing the same thing over and over again. Often, the code will be slightly different each time round the loop, or the same code will run but with different variables.
+
+What is the break statement?
+-If you want to exit a loop before all the iterations have been completed, you can use the break statement.
+
+What is the continue statement?
+-The continue statement works similarly to break, but instead of breaking out of the loop entirely, it skips to the next iteration of the loop.
+
+What is the advantage of writing automated tests?
+-In many ways, TDD is much more productive than writing code without tests. If we didn’t have the test for the adding function above, we would have to run the code ourselves over and over, plugging in different numbers until we were sure that it was working.

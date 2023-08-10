@@ -1,0 +1,14 @@
+What are the two methods we can use to output data to the user’s screen?
+#puts and print
+
+What is similar between these two output methods?
+#they both output the values or variables.
+
+What is different between these two output methods?
+#puts prints the value and put a new line in the end while prints does not.
+
+What is the method you can use to get input from the user?
+#gets
+
+What is at least one difference between the output and input methods?
+# gets actually returns the user input instead of returning nil like print and puts.

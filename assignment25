@@ -1,0 +1,10 @@
+What are three reasons why you may see a TypeError?
+-an operand or argument passed to a function is incompatible with the type expected by that operator or function;
+or when attempting to modify a value that cannot be changed;
+or when attempting to use a value in an inappropriate way.
+
+What is the key difference between an error and a warning?
+-error makes the program stop from running and prevent further actions while warning provides insight on potential problems that may not necessarily crash your program or runtime.
+
+What is one method you can use to resolve an error?
+-debugging.

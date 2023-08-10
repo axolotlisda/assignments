@@ -1,0 +1,23 @@
+How do you create a paragraph in HTML?
+-by using <p> 'content' </p> tag
+
+How do you create a heading in HTML?
+-by using <h1>.
+
+How many different levels of headings are there and what is the difference between them?
+- there are six heading levels. <h1> is the biggest and <h6> is the smallest.
+
+What element should you use to make text bold and important?
+-use <strong> tag to make it bold and important.
+
+What element should you use to make text italicized to add emphasis to it?
+-use <em>.
+
+What relationship does an element have with any nested elements within it?
+-children.
+
+What relationship do two elements have if they are at the same level of nesting?
+-siblings.
+
+How do you create HTML comments?
+-by using <!-- 'content' --> tag

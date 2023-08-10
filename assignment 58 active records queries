@@ -1,0 +1,42 @@
+How does lazy evaluation help make Active Record more efficient?
+- Using User.find(1) will return an unambiguous object – it’s going to find the user with ID = 1 and give it to you as a Ruby object. But this behavior is actually unusual. Most queries don’t actually return a Ruby object, they just fake it. For example:
+
+  User.where(id: 1)
+Might look like it returns an array that contains a serialized User object, like:
+
+  [#<User id: 1, email: "foo@bar.com">]
+  
+  Active Record queries return relations to be lazy. There’s basically no reason to actually tell the database to execute a query until the very last possible minute. What if you never actually needed to use that query at all? What if you want to make it more complex before executing it? Relations give you that flexibility and make much more efficient use of your database’s valuable time.
+
+
+How do you check whether a database already contains a record?
+- The simplest new concept is how to check whether an object actually exists yet or not, which you may want to do before running a method which depends on the object actually having been saved already.
+
+#exists? will return true/false.
+
+What is the difference between a #where query and a #find query?
+- The key thing to note is that #find returns the actual record while #where returns an ActiveRecord::Relation which basically acts like an array.
+
+How do you join tables together in Rails?
+- When working with multiple tables, you’ll often want to join them together. Rails associations often do the heavy lifting of setting up the joins for you if you’re working with instances of an object, so you may not need to explicitly use a #join right away.
+
+But if you’re running queries like in the Post-Tag-count grouping example used above, you’ll need to use joins to bring together the appropriate tables. You need to be more careful with how you select data when using joins – if you are looking for the :id column, which table’s ID are we asking for? You’ll find yourself using more explicit strings when joining, e.g. in the example above (copied below) where we specify the name attribute of the tags table:
+
+  Post.joins(:tags).group("tags.name").count
+  # => {"tag1" => 4, "tag2" => 2, "tag3" => 5}
+  
+What is an example of an N+1 query?
+- The N+1 query problem is the classic case of this – you grab all the records for your users (User.all) then loop through each user and call an association it has, like the city the user lives in (user.city).
+
+What method is used to deal with an N+1 query?
+- If you want your application to run with any kind of efficiency at all, you should strive to reduce the number of queries that are run on your database as much as possible. That means figuring out ahead of time exactly what you’re looking for and then building the correct query to grab that thing one time only.
+
+When would you use a class method in place of a scope?
+- You might be thinking, Why use a scope when you can write a class method to do the same thing? You can, as long as your class method returns a Relation (which can take some additional thought for edge cases). In fact, using a class method is often best if your logic chains are quite complicated. The example above could be solved using the following class method as well:
+
+  # app/models/post.rb
+  ...
+  def self.important
+    self.where(is_important: true)
+  end
+  ...

@@ -1,0 +1,23 @@
+What is a variable?
+#Variables are a way of assigning data to names in your programs. You can think of a variable as a box with a label on it: it stores something and has a name so that you know what’s inside.
+
+How do you assign a value or an expression to a variable?
+#This is how to create a variable in Ruby:
+age = 18 
+
+What does the += assignment operator do?
+# it is used for reassignment of the value of the variable.
+
+What does the -= assignment operator do?
+# it subracts the previous value of the variable to a new value or variable.
+
+What does the *= assignment operator do?
+# it multiplies the previous value of the variable to a new value or variable. It can also be used to repeat a string 
+
+What does the /= assignment operator do?
+# it divided the previous value of the variable to itself.
+
+What are the variable naming conventions?
+#Ruby is a language that aims to be natural to read and easy to write. Remember this when you’re naming your variables. The name should, as clearly as possible, describe what the value of the variable represents. Variable names should always be lowercase, and multiple words that make up a variable name should be split by an underscore. This is known as snake_case.
+
+

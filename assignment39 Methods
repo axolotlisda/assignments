@@ -1,0 +1,107 @@
+How would you create your own method?
+#You can create your own custom methods in Ruby using the following syntax:
+
+def my_name
+  "Joe Smith"
+end
+
+How would you call your new method?
+#As mentioned above, you can name your methods almost anything you want, but you shouldn’t pick names haphazardly. Your method names can use numbers, capital letters, lowercase letters, and the special characters _, ?, !, and =. Just like with variable names in Ruby, the convention for a method name with multiple words is to use snake_case, separating words with underscores.
+
+
+How do you pass variables to your method?
+#Of course, not all methods are as simplistic as the my_name example method above. After all, what good are methods if you can’t interact with them? When you want to return something other than a fixed result, you need to give your methods parameters. Parameters are variables that your method will receive when it is called. You can have more meaningful and useful interactions with your methods by using parameters to make them more versatile.
+
+def greet(name)
+  "Hello, " + name + "!"
+end
+
+puts greet("John") #=> Hello, John!
+
+How do you define default parameters for your method?
+#You can do it this:
+def greet(name = "stranger")
+  "Hello, " + name + "!"
+end
+
+puts greet("Jane") #=> Hello, Jane!
+puts greet #=> Hello, stranger!
+
+What is the difference between an explicit return and an implicit return?
+#explicit return statement, which is a statement that starts with the return keyword. 
+#implicit return for methods, which means that a Ruby method will return the last expression that was evaluated even without the return keyword. Using if else is an example of an implicit return.
+
+What is the difference between puts and return?
+#puts is a method that prints whatever argument you pass it to the console.
+#return is the final output of a method that you can use in other places throughout your code.
+
+How do you chain multiple methods together?
+#This can be done using Ruby’s built-in methods or with methods that you create.
+
+phrase = ["be", "to", "not", "or", "be", "to"]
+
+puts phrase.reverse.join(" ").capitalize
+#=> "To be or not to be"
+
+Give an example of a valid method name and an invalid method name.
+#
+method_name      # valid
+_name_of_method  # valid
+1_method_name    # invalid
+method_27        # valid
+method?_name     # invalid
+method_name!     # valid
+begin            # invalid (Ruby reserved word)
+begin_count      # valid
+
+What is snake case?
+#the convention for a method name with multiple words separating words with underscores.
+
+What are some of Ruby’s reserved words?
+
+#BEGIN             Code, enclosed in { and }, to run before the program runs.
+END               Code, enclosed in { and }, to run when the program ends.
+alias             Creates an alias for an existing method, operator, or global variable.
+and               Logical operator; same as && except and has lower precedence.
+begin             Begins a code block or group of statements; closes with end.
+break             Terminates a while or until loop or a method inside a block.
+\case             Compares an expression with a matching when clause; closes with end.
+class             Defines a class; closes with end.
+def               Defines a method; closes with end.
+defined?          Determines if a variable, method, super method, or block exists.
+do                Begins a block and executes code in that block; closes with end.
+else              Executes if previous conditional, in if, elsif, unless, or when, is not true.
+elsif             Executes if previous conditional, in if or elsif, is not true.
+end               Ends a code block (group of statements) starting with begin, def, do, if, etc.
+ensure            Always executes at block termination; use after last rescue.
+false             Logical or Boolean false, instance of FalseClass. (See true.)
+for               Begins a for loop; used with in.
+if                Executes code block if true. Closes with end. 
+module            Defines a module; closes with end.
+next              Jumps before a loop's conditional.
+nil               Empty, uninitialized variable, or invalid, but not the same as zero; object of NilClass.
+not               Logical operator; same as !.
+or                Logical operator; same as || except or has lower precedence.
+redo              Jumps after a loop's conditional.
+rescue            Evaluates an expression after an exception is raised; used before ensure.
+retry             Repeats a method call outside of rescue; jumps to top of block (begin) if inside rescue.
+return            Returns a value from a method or block. May be omitted.
+self              Current object (invoked by a method).
+super             Calls method of the same name in the superclass. The superclass is the parent of this class.
+then              A continuation for if, unless, and when. May be omitted.
+true              Logical or Boolean true, instance of TrueClass.
+undef             Makes a method in current class undefined.
+unless            Executes code block if conditional statement is false.
+until             Executes code block while conditional statement is false.
+when              Starts a clause (one or more) under case.
+while             Executes code while the conditional statement is true.
+yield             Executes the block passed to the method.
+_ _FILE_ _        Name of current source file.
+_ _LINE_ _     Number of current line in the current source file.
+
+
+What do you call a method that returns true or false? What is their naming convention?
+#You will sometimes encounter built-in Ruby methods that have a question mark (?) at the end of their name, such as even?, odd?, or between?. These are all predicate methods, which is a naming convention that Ruby uses for methods that return a Boolean, that is, they return either true or false.
+
+What do bang methods do? What is their naming convention?
+#By adding a ! to the end of your method, you indicate that this method performs its action and simultaneously overwrites the value of the original object with the result.

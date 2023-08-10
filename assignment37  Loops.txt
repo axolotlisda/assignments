@@ -1,0 +1,20 @@
+What is a loop and why it is useful?
+#If you find yourself needing to repeat an action more than once in your code, you probably need loops in your life.
+
+What is a loop loop, and how would you use it?
+#s Ruby’s loop that just won’t quit. It’s an infinite loop that will keep going unless you specifically request for it to stop, using the break command.
+
+What is a while loop, and how would you use it?
+#A while loop is similar to the loop loop except that you declare the condition that will break out of the loop up front.
+
+What is a for loop, and how would you use it?
+#A for loop is used to iterate through a collection of information such as an array or range. These loops are useful if you need to do something a given number of times while also using an iterator.
+
+What is a #times loop, and how would you use it?
+#If you need to run a loop for a specified number of times, then look no further than the trusty #times loop. It works by iterating through a loop a specified number of times and even throws in the bonus of accessing the number it’s currently iterating through.
+
+What is an until loop, and how would you use it?
+#The until loop is the opposite of the while loop. A while loop continues for as long as the condition is true, whereas an until loop continues for as long as the condition is false. These two loops can therefore be used pretty much interchangeably. Ultimately, what your break condition is will determine which one is more readable.
+
+What are the #upto and #downto loops, and how would you use them?
+#The Ruby methods #upto and #downto do exactly what you’d think they do from their names. You can use these methods to iterate from a starting number either up to or down to another number, respectively.

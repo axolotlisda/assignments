@@ -1,0 +1,133 @@
+What are the eight data types in JavaScript?
+1. number
+2. bigint
+3. string
+4. boolean
+5. null
+6. undefined
+7. symbol
+8. object
+
+Which data type is NOT primitive?
+- object
+
+What is the relationship between null and undefined?
+- null is "reference to non-existant object or null pointers" while undefined is "value is not assigned"
+
+What is the difference between single, double, and backtick quotes for strings?
+-In JavaScript, you can choose single quotes or double quotes to wrap your strings in. Both of the following will work okay:
+const sgl = 'Single quotes.';
+const dbl = "Double quotes";
+console.log(sgl);
+console.log(dbl);
+Copy to Clipboard
+There is very little difference between the two, and which you use is down to personal preference. You should choose one and stick to it, however; differently quoted code can be confusing, especially if you use two different quotes on the same string! The following will return an error:
+const badQuotes = 'What on earth?";
+The browser will think the string has not been closed because the other type of quote you are not using to contain your strings can appear in the string. For example, both of these are okay:
+const sglDbl = 'Would you eat a "fish supper"?';
+const dblSgl = "I'm feeling blue.";
+console.log(sglDbl);
+console.log(dblSgl);
+Copy to Clipboard
+However, you can't include the same quote mark inside the string if it's being used to contain them. The following will error, as it confuses the browser as to where the string ends:
+const bigmouth = 'I've got no right to take my place…';
+This leads us very nicely into our next subject.
+
+
+What is the term for embedding variables/expressions in a string?
+-Concatenation
+
+Which type of quote lets you embed variables/expressions in a string?
+-single quote'', double quote "", backticks``.
+
+How do you embed variables/expressions in a string?
+-by using a concatenator +.
+
+How do you escape characters in a string?
+-const bigmouth = 'I\'ve got no right to take my place…';
+console.log(bigmouth);
+Copy to Clipboard
+This works fine. You can escape other characters in the same way, e.g. \", and there are some special codes besides. See Escape sequences for more details.
+
+What is the difference between the slice/substring/substr string methods?
+-slice() extracts a part of a string and returns the extracted part in a new string.
+
+The method takes 2 parameters: the start position, and the end position (end not included).
+
+-substring() is similar to slice().
+
+The difference is that start and end values less than 0 are treated as 0 in substring().
+
+-substr() is similar to slice().
+
+The difference is that the second parameter specifies the length of the extracted part.
+
+
+
+What are the three logical operators and what do they stand for?
+- && (AND), || (OR) , ! (NOT).
+
+
+What are the comparison operators?
+- == != > <  >= <= === !==
+
+What are truthy and falsy values?
+-A number 0, an empty string "", null, undefined, and NaN all become false. Because of that they are called “falsy” values.
+Other values become true, so they are called “truthy”.
+
+What are the falsy values in JavaScript?
+-A number 0, an empty string "", null, undefined, and NaN all become false. Because of that they are called “falsy” values.
+
+What are conditionals?
+Very often when you write code, you want to perform different actions for different decisions.
+
+You can use conditional statements in your code to do this.
+
+In JavaScript we have the following conditional statements:
+
+Use if to specify a block of code to be executed, if a specified condition is true
+Use else to specify a block of code to be executed, if the same condition is false
+Use else if to specify a new condition to test, if the first condition is false
+Use switch to specify many alternative blocks of code to be executed
+
+
+What is the syntax for an if/else conditional?
+-if (condition) {
+  //  block of code to be executed if the condition is true
+}
+else if (condition) {
+  //  block of code to be executed if the condition is true
+}
+
+
+What is the syntax for a switch statement?
+-switch(expression) {
+  case x:
+    // code block
+    break;
+  case y:
+    // code block
+    break;
+  default:
+    // code block
+}
+What is the syntax for a ternary operator?
+-The conditional (ternary) operator is the only JavaScript operator that takes three operands: a condition followed by a question mark ( ? ), then an expression to execute if the condition is truthy followed by a colon ( : ), and finally the expression to execute if the condition is falsy.
+
+What is nesting?
+-Nesting is when you write something inside of something else.
+
+You can have a function inside of another function:
+
+function x () { function y() { // something; } }
+
+You can have an if condition inside of another if condition:
+
+if (daylight) {
+   if (before 12) {
+      //It's morning;
+    } else {
+      // it's afternoon;
+    }
+ }
+

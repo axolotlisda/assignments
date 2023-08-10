@@ -1,0 +1,13 @@
+What is back-end development?
+-Back-end development involves working with applications, databases, and servers to handle the application logic and data management functionality of a web application. These technologies interact with the front-end, often using APIs, to form a full technology stack.
+
+How many parts does the backend consist of?
+-3 parts
+
+Name each part of the backend.
+- 1. The server. This is the computer that receives requests.
+  2. The app. This is the application running on the server that listens for requests, retrieves information from the database, and sends a response.
+  3. The database. Databases are used to organize and persist data.
+
+Where does the backend store its data?
+-The back-end also includes the database, which will persistently store all of the data for the application.

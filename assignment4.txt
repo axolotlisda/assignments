@@ -1,0 +1,36 @@
+How do you create a new repository on GitHub?
+-Create a new repository by clicking the + button near the profile in github. then give it a name and readme file then save.
+
+How do you copy a repository onto your local machine from GitHub?
+-to clone your repository from GitHub onto your computer with git clone followed by the URL you copied in the last step. The full command should look similar to git clone git@github.com:USER-NAME/REPOSITORY-NAME.git. If your URL looks like https://github.com/USER-NAME/REPOSITORY-NAME.git, you have selected the HTTPS option, not the required SSH option.
+
+What is the default name of your remote connection?
+-The name “origin” is both the default and the convention for the remote repository. But it could have just as easily been named “party-parrot” or “dancing-banana”.
+
+Explain what origin is in git push origin main.
+-In Git, "origin" is a shorthand name for the remote repository that a project was originally cloned from. More precisely, it is used instead of that original repository's URL - and thereby makes referencing much easier.
+
+Explain what main is in git push origin main.
+-It is the branch that you want to save in.
+
+Explain the two-stage system that Git uses to save files.
+-A save in Git is divided into two terminal commands: add and commit. The combination of these two commands gives you control of exactly what you want to be remembered in your snapshot.
+
+1. Staging: Think of add as adjusting the number of people or elements to be included in a photo. With Git, you can select the changes you want to save with git add. Imagine a project that contains multiple files where changes have been made to several files. You want to save some of the changes you have made and leave some other changes to continue working on them.
+
+2. Committing: Think of commit as actually taking a photo, resulting in a snapshot. For example, to commit a file named README.md, type git commit -m "Add README.md". The -m flag stands for "message" and must always be followed by a commit message inside quotation marks. In this example, the commit message was "Add README.md".
+
+How do you check the status of your current repository?
+-git status
+
+How do you add files to the staging area in git?
+-git add .
+
+How do you commit the files in the staging area and add a descriptive message?
+-git commit -m "A message describing what you have done to make this snapshot different"
+
+How do you push your changes to your repository on GitHub?
+-type 'git push'. To be more specific, type 'git push origin main'.
+
+How do you look at the history of your previous commits?
+-git log

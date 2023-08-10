@@ -1,0 +1,18 @@
+What is an array and why is it useful?
+#One way Ruby allows you to represent a collection of data is with arrays, which you can think of as ordered lists. Rather than working with individual variables, numbers, or strings, an array allows you to create and manipulate an ordered and indexed collection of these data.
+
+What are two ways to create a new empty array?
+#arr = []
+#Array.new
+
+What are some ways of accessing the elements in an array?
+#Every element in an array has an index, which is a numerical representation of the element’s position in the array. Like most other programming languages, Ruby arrays use zero-based indexing, which means that the index of the first element is 0, the index of the second element is 1, and so on. Accessing a specific element within an array is as simple as calling myArray[x], where x is the index of the element you want. Calling an invalid position will result in nil. Ruby also allows the use of negative indices, which return elements starting from the end of an array, starting at [-1].
+
+#Finally, Ruby provides the #first and #last array methods, which should be self-explanatory. In addition, these methods can take an integer argument, e.g., myArray.first(n) or myArray.last(n), which will return a new array that contains the first or last n elements of myArray, respectively.
+
+What are 3 ways to add data to an array?
+#Adding an element to an existing array is as simple as using the #push method or the shovel operator <<. Both methods will add elements to the end of an array and return that array with the new elements.
+
+How can you remove elements from an array?
+#pop method will remove the element at the end of an array and return the element that was removed.
+The #shift method removes the first element of an array and returns that element (much like #pop).

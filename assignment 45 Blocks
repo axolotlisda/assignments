@@ -1,0 +1,47 @@
+What is a block?
+# Blocks are enclosed in a do / end statement or between brackets {}, and they can have multiple arguments.
+
+The argument names are defined between two pipe | characters.
+
+How is a block like a method?
+# Ruby blocks are little anonymous functions that can be passed into methods.
+
+What are the two ways to declare a block?
+# A block can be declared as a single-line or multi-line block. Ruby convention is to use {} for single-line blocks and do..end for multi-line blocks. You can pass parameters to a block by defining them inside pipes, i.e. |arg1, arg2|. You’ll already know both forms from working with enumerable methods.
+
+How do you return data from a block?
+# Like any method call in Ruby, blocks have a return value. So when you call yield, it returns the last executed value from the block. Using the example above, if you instead moved the p from the block to inside the #each call, your method would be in control of how the transactions were printed. Maybe you only allow exporting to a .csv for example.
+
+How can your methods collect the return data from a block?
+# If you want to gather the value returned from the block, you can just assign it to a variable or collect it in a data structure.
+
+What happens if you include a return statement in a block?
+# This works the same way as an explicit return works in a method. This might be useful if you need some kind of guard clause.
+
+What does yield do?
+# yield is a keyword that can be called inside a method to relinquish execution to the accompanying block.
+
+How do you pass arguments to a block from within a method?
+# Just pass them as arguments to yield, and they’ll be passed to the block as parameters. If you call yield more than once, you can pass a different argument each time if you wanted to.
+
+How do you check whether a block was actually passed in?
+# Enter block_given?
+
+You can use this method as a conditional check inside your own method to see if a block was included by the caller. If so, block_given? returns true, otherwise it returns false.
+
+What is a proc?
+# A proc is just an object that you can use to store blocks and pass them around like variables. If you think this sounds a bit like a lambda, then you’d be right. In fact, there is no special lambda class.
+
+What is a lambda?
+# A lambda is a way to write a block and save it to a variable. This can be useful if you’re calling different methods but passing in the same block to each of them. It keeps you from having to type out the same code over and over again.
+
+What’s different between a lambda and a proc?
+# There isn’t much more to creating procs that you haven’t already seen with lambdas. So why use one over the other? Well, there are some key differences between procs and lambdas that can make choosing one over the other more suitable.
+Arguments
+Returning
+
+How do you convert a proc to a block?
+# The & also works the other way. You can prepend it to a proc object and it converts it to a block, and passes the block to the method being called.
+
+How do you convert a block to a proc?
+# 

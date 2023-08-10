@@ -1,0 +1,49 @@
+How does “asset concatenation” optimize loading of your app?
+- It reduces the number of requests that a browser makes to render a web page.
+
+How do you include an asset in your views or layout?
+- Sprockets does not add any new methods to access your assets - you still use the familiar javascript_include_tag and stylesheet_link_tag:
+
+<%= stylesheet_link_tag "application", media: "all" %>
+<%= javascript_include_tag "application" %>
+
+What does the require_tree method do in a manifest-file?
+- The require_tree directive tells Sprockets to recursively include all JavaScript files in the specified directory into the output.
+
+Why would you namespace your stylesheets?
+- This is actually a principle that gets used a LOT, so it’s important to understand it. You’ll see it with stylesheets, JavaScripts, modules of code and more.
+
+The basic idea is to be able to say “all this code/css/whatever inside here only belongs to XYZ”. You sort of fence it off. It’s best explained with an example:
+
+   <!-- app/views/users/show.html.erb -->
+  <div class="user">
+    <div class="container">
+      <!-- a bunch of code for displaying the user -->
+    </div>
+  </div>
+Now this container and all the code inside of it is also within the .user class. So we can set up our stylesheet to specifically address the .container class that’s inside a .user class:
+
+  /* app/assets/stylesheets/user.css */
+  .user .container{
+    // style stuff
+  }
+This is good because we’re now specifically targeting containers used by User pages.
+
+The same principle applies to JavaScript, though we won’t cover it here because that’s material for a later course.
+
+So anytime you want to make only a portion of your stylesheets or JavaScript code available to a specific set of views, try namespacing it.
+
+How do you display <p>hello world!</p> in your app?
+- Un-Escaping HTML
+Let’s say you’re building a blog and you want to be able to write posts that include HTML code. If you just write something like this is the <strong>BODY</strong> of my post and then try to display it in a view later, the <strong> tags will just be regular text… they will literally say ‘<strong>’. That’s called “escaping” the characters.
+
+To get your views to actually render HTML as HTML, you need to let Rails know that the code is safe to run. Otherwise, it’s easy for a malicious attacker to inject code like <script> tags that cause major issues when you try to render them.
+
+To tell Rails a string is safe, just use the method raw in your view template, for example:
+
+  <%= raw "<p>hello world!</p>" %>   <!-- this will create real <p> tags -->
+If you don’t want to rely on Rails’ native behavior and would like to make absolutely sure the HTML does not get run, use the CGI class’s escapeHTML method, e.g.
+
+  CGI::escapeHTML('usage: foo "bar" <baz>')
+  # => "Usage: foo &quot;bar&quot; &lt;baz&gt;"
+

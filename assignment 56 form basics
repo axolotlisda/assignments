@@ -1,0 +1,72 @@
+What is a CSRF Token and why is it necessary?
+- Cross-site request forgery, also known as one-click attack or session riding and abbreviated as CSRF (sometimes pronounced sea-surf[1]) or XSRF, is a type of malicious exploit of a website or web application where unauthorized commands are submitted from a user that the web application trusts. Rails by default automatically protects you from cross-site request forgery and it requires you to verify that the form was actually submitted from a page you generated. In order to do so, it generates an “authenticity token” which looks like gibberish but helps Rails match the form with your session and the application.
+
+What is the name attribute of a form input element and what does it do?
+- name attribute that you can give to an input tag. In Rails, that’s very important. The name attribute tells Rails what it should call the stuff you entered in that input field when it creates the params hash. For instance,
+
+  ...
+  <input type="text" name="description">
+  ...
+
+How do you nest attributes under a single hash in params?
+- You’ll often want to tuck submitted data neatly into a hash instead of keeping them all at the top level. This can be useful because, as we saw with controllers, it lets you do a one-line #create (once you’ve allowed the parameters with #require and #permit). When you access params[:user], it’s actually a hash containing all the user’s attributes, for instance {first_name: "foo", last_name: "bar", email: "foo@bar.com"}. How do you get your forms to submit parameters like this? It’s easy!
+
+It all comes back to the name attribute of your form inputs. Just use hard brackets to nest data like so:
+
+  ...
+  <input type="text" name="user[first_name]">
+  <input type="text" name="user[last_name]">
+  <input type="text" name="user[email]">
+  ...
+Those inputs will now get transformed into a nested hash under the :user key. The server output becomes:
+
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jJa87aK1OpXfjojryBk2Db6thv0K3bSZeYTuW8hF4Ns=", "user"=>{"first_name"=>"foo","last_name"=>"bar","email"=>"foo@bar.com"}, "commit"=>"Submit Form"}
+  
+  
+How do you pass form_with a model object?
+- Just pass form_with a model object, and it will make the form submit to the URL for that object, e.g. @article will submit to the correct URL for creating an Article. Remember from the lesson on controllers that the #new action usually involves creating a new (unsaved) instance of your object and passing it to the view… now you finally get to see why by using that object in your #form_with forms!
+
+From the Rails Guide:
+
+  # app/controllers/articles_controller.rb
+  def new
+    @article = Article.new
+  end
+  
+How do you access errors for a failed-to-save model object?
+- You can see those errors by accessing your_object_name.errors. Those errors have a couple of handy helpers you can use to display them nicely in the browser – #count and #full_messages. See the code below:
+
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+How do Rails forms make PATCH or DELETE requests?
+- Forms aren’t really designed to natively delete objects because browsers only support GET and POST requests. Rails gives you a way around that by sticking a hidden field named “_method” into your form. It tells Rails that you actually want to do either a PATCH (aka PUT) or DELETE request (whichever you specified), and might look like <input name="_method" type="hidden" value="patch">.
+
+You get Rails to add this to your form by passing an option to form_with called :method, e.g.:
+
+  form_with(url: search_path, method: "patch")
+  
+  
+What is one case where you may need an array of hashes within the params hash?
+- We can mix and match these two concepts. One element of a hash might be an array as in the previous example, or you can have an array of hashes. For example, a form might let you create any number of addresses by repeating the following form fragment
+
+<input name="person[addresses][][line1]" type="text"/>
+<input name="person[addresses][][line2]" type="text"/>
+<input name="person[addresses][][city]" type="text"/>
+<input name="person[addresses][][line1]" type="text"/>
+<input name="person[addresses][][line2]" type="text"/>
+<input name="person[addresses][][city]" type="text"/>
+Copy
+This would result in params[:person][:addresses] being an array of hashes with keys line1, line2, and city.
+
+There's a restriction, however: while hashes can be nested arbitrarily, only one level of "arrayness" is allowed. Arrays can usually be replaced by hashes; for example, instead of having an array of model objects, one can have a hash of model objects keyed by their id, an array index, or some other parameter.
+

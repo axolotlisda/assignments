@@ -1,0 +1,25 @@
+Why is it important to write clean code?
+- to make it easier to read for yourself and make you remember what does the code does and for other programmers.
+
+Name 5 clean code principles previously mentioned
+-Revise Your Logic Before Coding
+-Clearly Expose the Structure of the Page
+- Use the Correct Indentation
+-Write Explanatory Comments
+-Avoid Abusing Comments
+
+
+What is the difference between good comments and bad comments?
+-good comments: 
+
+*Authoring specifications (e.g. /* Coded by John, November 13th 2010 */).
+*Detailed statements on the functionality of a method or procedure (e.g. /* This function validates the login form with the aid of the e-mail check function */).
+*Quick notifications or labels that state where a recent change was made (e.g. /* Added e-mail validation procedure */).
+
+
+-bad comments:
+-Writing explanatory notes to self (e.g. /* Will finish this later… */).
+-Blaming stuff on other people (e.g. /* John coded this. Ask him. */).
+-Writing vague statements (e.g. /* This is another math function. */).
+-Erasing chunks of code. Sometimes people are not sure of erasing things and it’s not absolutely evil to comment that code instead.
+

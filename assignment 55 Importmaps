@@ -1,0 +1,10 @@
+Can you use import maps with npm packages?
+- importmap-rails is designed to be used with JavaScript CDNs for NPM package dependencies.
+
+You can use the ./bin/importmap command that’s added as part of the install to pin, unpin, or update npm packages in your import map. This command resolves the package dependencies and adds the pins to your config/importmap.rb.
+
+How do you download vendor files using import maps?
+- you can download vendored files from the CDN when you’re setting up your pins. These packages are downloaded to the vendor/javascript directory
+
+How can you preload pinned modules?
+- To avoid having the browser load one file after another before it can get to the deepest nested import, importmap-rails supports modulepreload links. Pinned modules can be preloaded by appending preload: true to the pin.

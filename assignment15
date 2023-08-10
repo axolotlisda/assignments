@@ -1,0 +1,18 @@
+What is the difference between a block element and an inline element?
+-block element has everything respected but it has it's own line and in inline element the texts and any other elements are overlaped.
+
+What is the difference between an inline element and an inline-block element?
+-inline element the texts and any other elements are overlaped, in inline-block everthing is respected but the two copies of the element can still sit side by side.
+
+Is an h1 block or inline?
+-block
+
+Is button block or inline?
+-inline
+
+Is div block or inline?
+-block
+
+Is span block or inline?
+-inline
+

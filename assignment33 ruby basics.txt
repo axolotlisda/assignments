@@ -1,0 +1,95 @@
+What are the basic arithmetic operators you can use on numbers?
+#Addition,Subtraction,Multiplication,Division,Exponent,Modulus.
+
+What’s the difference between an integer and a float?
+#Integers are whole numbers, such as 10. Floats are numbers that contain a decimal point, such as 10.5, 10.0, or 0.25.
+
+
+What method would you use to convert a float to an integer?
+# To convert a float to an integer:
+13.0.to_i #=> 13
+13.9.to_i #=> 13
+
+
+What method would you use to convert an integer to a float?
+# To convert an integer to a float:
+13.to_f   #=> 13.0
+
+Strings
+What is a string?
+#At first glance, you might think that strings are just a bunch of characters that aren’t very useful beyond getting user input and outputting some information to the screen.
+
+What are the differences between single and double quotes?
+#Strings can be formed with either double "" or single'' quotation marks, also known as string literals. They are pretty similar, but there are some differences. Specifically, string interpolation and the escape characters that we’ll discuss soon both only work inside double quotation marks, not single quotation marks.
+
+What is string interpolation?
+#String interpolation allows you to evaluate a string that contains placeholder variables. This is a very useful and common technique, so you will likely find yourself using this often. Be sure to use double quotes so that string interpolation will work!
+
+How do you concatenate strings?
+# With the plus operator:
+"Welcome " + "to " + "Odin!"    #=> "Welcome to Odin!"
+
+# With the shovel operator:
+"Welcome " << "to " << "Odin!"  #=> "Welcome to Odin!"
+
+# With the concat method:
+"Welcome ".concat("to ").concat("Odin!")  #=> "Welcome to Odin!"
+
+What method would you use to change all the characters in your string to upper case?
+#"hello".upcase  #=> "HELLO"
+
+What method would you use to split up strings into arrays?
+#"hello world".split  #=> ["hello", "world"]
+"hello".split("")    #=> ["h", "e", "l", "l", "o"]
+
+What are escape characters?
+#Escape characters allow you to type in representations of whitespace characters and to include quotation marks inside your string without accidentally ending it. As a reminder, escape characters only work inside double quotation marks.
+
+How do you access a specific character or substring?
+#You can access strings inside strings inside strings. Stringception! It’s super easy, too.
+
+"hello"[0]      #=> "h"
+
+"hello"[0..1]   #=> "he"
+
+"hello"[0, 4]   #=> "hell"
+
+"hello"[-1]     #=> "o"
+
+How do you convert other data types into strings?
+#Using the to_s method, you can convert pretty much anything to a string. Here are some examples:
+
+5.to_s        #=> "5"
+
+nil.to_s      #=> ""
+
+:symbol.to_s  #=> "symbol"
+
+Symbols
+What is a symbol?
+#Symbols are an interesting twist on the idea of a string. Strings can be changed, so every time a string is used, Ruby has to store it in memory even if an existing string with the same value already exists. Symbols, on the other hand, are stored in memory only once, making them faster in certain situations.
+
+How do you create a symbol?
+#Create a Symbol
+To create a symbol, simply put a colon at the beginning of some text:
+
+:my_symbol
+
+What’s the difference between a symbol and a string?
+#To get a better idea of how symbols are stored in memory, give this a whirl in irb or a REPL. The #object_id method returns an integer identifier for an object. (And remember: in Ruby, everything is an object!)
+
+"string" == "string"  #=> true
+
+"string".object_id == "string".object_id  #=> false
+
+:symbol.object_id == :symbol.object_id    #=> true
+
+Booleans
+What does true represent?
+#true represents something that is true
+
+What does false represent?
+#false represents something that is false
+
+What does nil represent?
+#nil represents something that is "nothing"

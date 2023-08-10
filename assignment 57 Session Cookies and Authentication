@@ -1,0 +1,24 @@
+How would you set a cookie for hair color on a user’s browser?
+- To work with cookies, Rails gives you access to a special hash called cookies, where each key-value pair is stored as a separate cookie on the user’s browser. If you were to save cookies[:hair-color] = "blonde", you’d be able to pull up your browser’s developer tools and see a cookie on the user’s browser that has a key of hair-color and a value of blonde. Delete it using cookies.delete(:hair-color).
+
+How would you require a user is logged in before running some code?
+- We do this through the use of a “before filter”, which takes the name of the method we want to run:
+
+  # app/controllers/users_controller
+  before_action :require_login
+  ...
+  private
+
+  def require_login
+    # do stuff to check if user is logged in
+  end
+The before_action method takes the symbol of the method to run before anything else gets run in the controller. If it returns false or nil, the request will not succeed.
+
+Would you use Basic HTTP Authentication for authenticating users over alternatives such as the Devise gem?
+- If you’re looking for a very casual and insecure way of authenticating people, HTTP Basic authentication can be used. We won’t cover the details here, but it basically involves submitting a username and password to a simple form and sending it (unencrypted) across the network. You use the #http_basic_authenticate_with method to do so (see the reading for examples) and to restrict access to certain controllers without it.
+
+How would you flash an error message on a user’s browser if they put an invalid username?
+- What about cases where the user can’t sign up because of failed validations? In this case, the typical #create action would just render the #new action using the existing instance variables. Since it’s not a totally new request, you’ll want to have your error message available immediately. That’s why there’s the handy flash.now hash, e.g. flash.now[:error] = "Fix your submission!". Just like the regular flash, this one self destructs automatically after opening.
+
+What are some reasons you would want to use the Devise gem for user authentication over building your own authorization system?
+- Devise is a gem which has been built to handle all this stuff for you. It’s ultimately better than rolling your own auth because they’ve covered a lot of the edge cases and security loopholes that you might not think about. Devise lets you interface with more advanced authentication systems for talking to APIs like OAuth. So it’s quite useful down the road.

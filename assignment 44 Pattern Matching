@@ -1,0 +1,15 @@
+What is pattern matching?
+# Pattern matching is a feature allowing deep matching of structured values: checking the structure and binding the matched parts to local variables.
+
+What is the difference between array patterns and hash patterns?
+# Array patterns and find patterns match arrays, or objects that respond to deconstruct. 
+# Hash patterns match hashes, or objects that respond to deconstruct_keys. Note that only symbol keys are supported for hash patterns.
+
+What is the variable pattern match?
+# The variable pattern binds a variable or variables to the values that match the pattern.
+
+What are the different ways of pattern matching on an array?
+# Matching against arrays can be done in a few different ways. At its most basic, you can match against the exact elements in the array.
+
+Explain the find pattern.
+# It works by placing a * either side of the part you want to match. You can even use the variable pattern to give each * a variable name to reference later. Let’s look at some examples.

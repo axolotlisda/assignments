@@ -1,0 +1,80 @@
+What is the DOM?
+-The DOM (or Document Object Model) is a tree-like representation of the contents of a webpage - a tree of “nodes” with different relationships depending on how they’re arranged in the HTML document.
+
+How do you target the nodes you want to work with?
+-you use “selectors” to target the nodes you want to work with.
+
+How do you create an element in the DOM?
+-document.createElement(tagName, [options]) creates a new element of tag type tagName. 
+
+How do you add an element to the DOM?
+-Append Elements
+parentNode.appendChild(childNode) appends childNode as the last child of parentNode
+parentNode.insertBefore(newNode, referenceNode) inserts newNode into parentNode before referenceNode
+
+
+How do you remove an element from the DOM?
+-parentNode.removeChild(child) removes child from parentNode on the DOM and returns a reference to child
+
+How can you alter an element in the DOM?
+-When you have a reference to an element, you can use that reference to alter the element’s own properties. This allows you to do many useful alterations, like adding/removing and altering attributes, changing classes, adding inline style information and more.
+
+const div = document.createElement('div');                     
+// creates a new div referenced in the variable 'div'
+
+When adding text to a DOM element, should you use textContent or innerHTML? Why?
+-textContent because of you use innerHTML, your site will be prone to Javascript injection.
+
+Where should you include your JavaScript tag in your HTML file when working with DOM nodes?
+-in the head 
+<head>
+  <script src="js-file.js" defer></script>
+</head>
+
+How do “events” and “listeners” work?
+-Events are actions that occur on your webpage such as mouse-clicks or keypresses, and using JavaScript we can make our webpage listen and react to these events.
+
+What are three ways to use events in your code?
+-There are three primary ways to go about this: you can attach functions’ attributes directly on your HTML elements, you can set the “on_event_” property on the DOM object in your JavaScript, or you can attach event listeners to the nodes in your JavaScript.
+simply: 
+1. html attribute
+2. onevent
+3. event listener
+
+Why are event listeners the preferred way to handle events?
+-event listener is much more flexible and powerful, though it is a bit more complex to set up.
+
+What are the benefits of using named functions in your listeners?
+-Using named functions can clean up your code considerably, and is a really good idea if the function is something that you are going to want to do in multiple places.
+
+How do you attach listeners to groups of nodes?
+-with querySelectorAll('selector'). In order to add a listener to each of them we simply need to iterate through the whole list like so:
+
+<div id="container">
+    <button id="1">Click Me</button>
+    <button id="2">Click Me</button>
+    <button id="3">Click Me</button>
+</div>
+// buttons is a node list. It looks and acts much like an array.
+const buttons = document.querySelectorAll('button');
+
+// we use the .forEach method to iterate through each button
+buttons.forEach((button) => {
+
+  // and for each one we add a 'click' listener
+  button.addEventListener('click', () => {
+    alert(button.id);
+  });
+});
+
+What is the difference between the return values of querySelector and querySelectorAll?
+-element.querySelector(selector) returns a reference to the first match of selector while element.querySelectorAll(selectors) returns a “nodelist” containing references to all of the matches of the selectors
+
+What does a “nodelist” contain?
+-it contains references to all of the matches of the selectors
+-It looks like an array, and it somewhat acts like an array, but it’s really a “nodelist”. The big distinction is that several array methods are missing from nodelists. One solution, if problems arise, is to convert the nodelist into an array. You can do this with Array.from() or the spread operator.
+
+Explain the difference between “capture” and “bubbling”.
+-Event capturing is one of two ways to do event propagation in the HTML DOM. In event capturing, an event propagates from the outermost element to the target element. It is the opposite of event bubbling
+-Bubbling is when an event happens on an element, it first runs the handlers on it, then on its parent, then all the way up on other ancestors.
+

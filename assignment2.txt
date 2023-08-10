@@ -1,0 +1,38 @@
+What is the command line?
+- it is a text-based user interface to the computer. It is a blank line and cursor on the screen, allowing the user to type in instructions for immediate execution
+
+How do you open the command line on your computer?
+-ctrl + alt + t
+
+How can you navigate to a particular directory?
+-cd directory-name
+
+Where will cd on its own navigate you to?
+-home directory
+
+Where will cd .. navigate you to?
+-back up
+
+How do you display the name of the directory you are currently in?
+-pwd
+
+How do you display the contents of the directory you are currently in?
+-ls
+
+How do you create a new directory?
+-mkdir dirname
+
+How do you create a new file?
+-touch filename.txt
+
+How do you destroy a directory or file?
+rm filename.txt
+
+How do you rename a directory or file?
+mv filename.txt
+
+
+
+
+
+
